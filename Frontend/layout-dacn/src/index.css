@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌸 Nền pastel dịu mắt */
+body {
+  @apply bg-gradient-to-br from-sky-100 to-pink-100 text-gray-800;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ========================================= */
+/*  ANIMATIONS BODY                          */
+/* ========================================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn { animation: fadeIn 0.2s ease-out forwards; }
+.animate-fadeSlide { animation: fadeSlide 0.25s ease-out forwards; }
+
+/* ========================================= */
+/*  TAB ACTIVE – PREMIUM GRADIENT GLOW       */
+/* ========================================= */
+
+.tab-active {
+  background: linear-gradient(135deg, #4cc9f0, #4361ee);
+  color: white !important;
+  box-shadow: 0px 3px 12px rgba(67, 97, 238, 0.35);
+  transform: translateY(-2px);
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+/* Icon bounce */
+.tab-active-icon {
+  animation: bounceIcon 0.5s ease;
+}
+
+@keyframes bounceIcon {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.25); }
+  60%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* Soft glow under active tab */
+.tab-glow {
+  filter: drop-shadow(0 0 10px rgba(67, 97, 238, 0.35));
+}
+
+/* ========================================= */
+/* SLIDE CONTENT                             */
+/* ========================================= */
+
+.slide-left {
+  animation: slideLeft 0.35s ease forwards;
+}
+.slide-right {
+  animation: slideRight 0.35s ease forwards;
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ========================================= */
+/*  FLOATING LABEL INPUT LIKE MUI            */
+/* ========================================= */
+
+.floating-group {
+  position: relative;
+  margin-top: 14px;
+}
+
+.floating-input {
+  border: 1px solid #cbd5e1;
+  padding: 12px 12px 8px;
+  border-radius: 6px;
+  width: 100%;
+  background: white;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.floating-label {
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  background: white;
+  padding: 0 4px;
+  color: #64748b;
+  font-size: 13px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.floating-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.3);
+}
+
+.floating-input:not(:placeholder-shown) + .floating-label,
+.floating-input:focus + .floating-label {
+  top: -8px;
+  left: 10px;
+  font-size: 11px;
+  color: #3b82f6;
+}
+
+/* ========================================= */
+/* BUTTON STYLE IMPROVED                     */
+/* ========================================= */
+
+button {
+  @apply transition-all duration-200;
+}
+
+button:hover {
+  @apply brightness-105;
+}
+
+/* BUTTON SHADOW SMOOTH */
+.btn-soft {
+  transition: all 0.2s ease;
+}
+.btn-soft:hover {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* ========================================= */
+/* FRIENDLY SCROLLBAR                        */
+/* ========================================= */
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 120, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(120, 120, 120, 0.4);
+}
+::-webkit-scrollbar-track { background-color: transparent; }
+
+/* ========================================= */
+/* PREMIUM TABLE STYLE                       */
+/* ========================================= */
+
+.table-premium thead {
+  background: linear-gradient(to right, #eef2ff, #e0e7ff);
+}
+
+.table-premium tbody tr:hover {
+  background: #f0f7ff;
+}
+
+.table-premium th {
+  @apply text-gray-700 font-semibold border-b p-3;
+}
+
+.table-premium td {
+  @apply border-b p-3;
+}
+
+/* ========================================= */
+/*  REMOVE ROW ANIMATION – BEAUTIFUL FADE    */
+/* ========================================= */
+
+.fade-remove {
+  animation: fadeRemove 0.35s ease forwards;
+}
+
+@keyframes fadeRemove {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  40% {
+    opacity: 0.6;
+    transform: translateX(8px) scale(0.97);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(35px) scale(0.85);
+  }
+}
+
