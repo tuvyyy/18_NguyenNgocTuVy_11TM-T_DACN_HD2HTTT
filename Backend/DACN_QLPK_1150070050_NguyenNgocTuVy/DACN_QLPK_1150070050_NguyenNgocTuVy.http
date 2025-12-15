@@ -1,0 +1,6 @@
+@DACN_QLPK_1150070050_NguyenNgocTuVy_HostAddress = http://localhost:5006
+
+GET {{DACN_QLPK_1150070050_NguyenNgocTuVy_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
